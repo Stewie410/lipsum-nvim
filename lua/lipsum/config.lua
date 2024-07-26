@@ -48,7 +48,7 @@ function M.setup(options)
       util.insert_text(M.words(count))
     end, {
       nargs = "?",
-      desc = "[lipsum.nvim] Generate word(s)",
+      desc = "[lipsum-nvim] Generate word(s)",
     })
 
     vim.api.nvim_create_user_command("LipsumLine", function(opts)
@@ -56,7 +56,7 @@ function M.setup(options)
       util.insert_text(M.lines(count))
     end, {
       nargs = "?",
-      desc = "[lipsum.nvim] Generate line(s)",
+      desc = "[lipsum-nvim] Generate line(s)",
     })
 
     vim.api.nvim_create_user_command("LipsumParagraph", function(opts)
@@ -64,7 +64,7 @@ function M.setup(options)
       util.insert_text(M.paragraphs(count))
     end, {
       nargs = "?",
-      desc = "[lipsum.nvim] Generate paragraph(s)",
+      desc = "[lipsum-nvim] Generate paragraph(s)",
     })
   end
 end

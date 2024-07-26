@@ -24,7 +24,7 @@ end
 ---@param message string Error message
 ---@param notify? boolean Create an error notification as well as a error()
 function M.err(message, notify)
-  local msg = "[lipsum.nvim] " .. message
+  local msg = "[lipsum-nvim] " .. message
   if notify then
     vim.notify(msg, vim.log.levels.ERROR)
   end
