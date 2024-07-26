@@ -6,7 +6,7 @@ local title = require("lipsum.util").title_case
 math.randomseed(vim.fn.reltimefloat(vim.fn.reltime()))
 
 ---Get random word(s) from wordlist
----@param words table List of available words
+---@param words string[] List of available words
 ---@param comma decimal Chance to append a comma after a word, between 0-1
 ---@param semi decimal Chance to append a semicolon after a word, between 0-1
 ---@param count number Number of words to generate
@@ -32,7 +32,7 @@ function M.words(words, comma, semi, count)
 end
 
 ---Get line(s) of random length from wordlist
----@param words table List of available words
+---@param words string[] List of available words
 ---@param comma decimal Chance to append a comma after a word, between 0-1
 ---@param semi decimal Chance to append a semicolon after a word, betwene 0-1
 ---@param min number Minimum line length
@@ -51,7 +51,7 @@ function M.lines(words, comma, semi, min, max, count)
 end
 
 ---Get paragraph(s) of random length from wordlist
----@param words table List of available words
+---@param words string[] List of available words
 ---@param comma decimal Chance to append a comma after a word, between 0-1
 ---@param semi decimal Chance to append a semicolon after a word, between 0-1
 ---@param line_min number Minimum line length
