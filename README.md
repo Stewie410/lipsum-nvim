@@ -1,3 +1,70 @@
+# lipsum-nvim
+
+A "simple" `Lorem Ipsum` generation plugin.
+
+## Installation
+
+### 💤 lazy.nvim
+
+```lua
+{
+    "Stewie410/lipsum-nvim",
+    cmd = {
+        "LipsumWord",
+        "LipsumLine",
+        "LipsumParagraph",
+    },
+    opts = {},
+}
+```
+
+### 🚐 mini.deps
+
+```lua
+local deps = require("mini.deps")
+deps.add({
+    source = "Stewie410/lipsum-nvim",
+})
+```
+
+## 📝 Setup
+
+```lua
+require("lipsum").setup({
+  ---@type string[] List of words used for generation, will be merged with lipsum.Options.word_list
+  words = {},
+  ---@type 'cicero'|'english'|'lipsum'|'standard'|nil Preset word list
+  word_list = "standard",
+  ---@type decimal Chance to insert a comma after a word
+  comma_chance = 0.2,
+  ---@type decimal Chance to insert a semicolon after a word
+  semicolon_chance = 0.05,
+  ---@type number[] Min/Max number of words per line
+  line_len = { 5, 12 },
+  ---@type number[] Min/Max number of lines per paragraph
+  paragraph_len = { 5, 20 },
+  ---@type table<string, string|nil> Create generation commands, set to nil to disable the command
+  user_commands = {
+    ---@type string|nil Command to generate word(s), set to nil to disable
+    words = "LipsumWord",
+    ---@type string|nil Command to generate line(s), set to nil to disable
+    lines = "LipsumLine",
+    ---@type string|nil Command to generate paragraph(s), set to nil to disable
+    paragraphs = "LipsumParagraph",
+  },
+})
+```
+
+## ⌨️ Commands
+
+Command names can be customized in the setup options; but by default:
+
+- `LipsumWord [num]`: Generate random word(s) from word list
+- `LipsumLine [num]`: Generate random line(s)/sentence(s) from word list
+- `LipsumParagraph [num]`: Generate random paragraph(s) from word list
+
+Each command will _always_ generate at least 1 item.
+
 ## Word Generation
 
 Words generated with [lipsum.com](https://www.lipsum.com), based on the
@@ -17,3 +84,19 @@ tr -d '\n[:punct:]' < lorem.txt | \
 
 While this may not produce every possible word from the generator, on average
 this produces around 300 unique words, which should be sufficient, hopefully.
+
+To add your own custom words:
+
+```bash
+require("lipsum").setup({
+    words = {
+        -- words
+    },
+})
+```
+
+## Insipiration
+
+- [`derktata/lorem.nvim`](https://github.com/derektata/lorem.nvim)
+- [`mbpowers/lorem-nvim`](https://github.com/mbpowers/lorem-nvim)
+- [`lipsum.com`](https://www.lipsum.com/)
