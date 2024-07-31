@@ -2,7 +2,19 @@
 
 A "simple" `Lorem Ipsum` generation plugin.
 
-## Installation
+## ✨ Features
+
+- User-defined wordlists for generation
+- Generate 1+ words, lines/sentences or paragraphs
+- Customize generator command names
+- Not much else
+
+## ⚠️ Requirements
+
+- Neovim version 0.10.0 or higher
+  - Only tested on v0.10, _may_ work on older versions
+
+## 📦 Installation
 
 ### 💤 lazy.nvim
 
@@ -27,7 +39,7 @@ deps.add({
 })
 ```
 
-## 📝 Setup
+## 📝 Configuration
 
 ```lua
 require("lipsum-nvim").setup({
