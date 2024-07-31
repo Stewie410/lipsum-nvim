@@ -19,8 +19,15 @@ local defaults = {
   line_len = { 5, 12 },
   ---@type number[] Min/Max number of lines per paragraph
   paragraph_len = { 5, 20 },
-  ---@type boolean Create 'Lipsum<Type>' user commands
-  create_commands = true,
+  ---@type table<string, string|nil> Create generation commands, set to nil to disable the command
+  user_commands = {
+    ---@type string|nil Command to generate word(s), set to nil to disable
+    words = "LipsumWord",
+    ---@type string|nil Command to generate line(s), set to nil to disable
+    lines = "LipsumLine",
+    ---@type string|nil Command to generate paragraph(s), set to nil to disable
+    paragraphs = "LipsumParagraph",
+  },
 }
 
 ---@type lipsum.Options
@@ -42,26 +49,27 @@ function M.setup(options)
     M.options.words = vim.tbl_deep_extend("force", {}, M.options.words, wl)
   end
 
-  if M.options.create_commands then
-    vim.api.nvim_create_user_command("LipsumWord", function(opts)
-      local count = tonumber(opts.args or "1")
-      util.insert_text(M.words(count))
+  if M.options.user_commands.words ~= nil then
+    vim.api.nvim_create_user_command(M.options.user_commands.words, function(opts)
+      util.insert_text(M.words(tonumber(opts.args or "1")))
     end, {
       nargs = "?",
       desc = "[lipsum-nvim] Generate word(s)",
     })
+  end
 
-    vim.api.nvim_create_user_command("LipsumLine", function(opts)
-      local count = tonumber(opts.args or "1")
-      util.insert_text(M.lines(count))
+  if M.options.user_commands.lines ~= nil then
+    vim.api.nvim_create_user_command(M.options.user_commands.lines, function(opts)
+      util.insert_text(M.lines(tonumber(opts.args or "1")))
     end, {
       nargs = "?",
       desc = "[lipsum-nvim] Generate line(s)",
     })
+  end
 
-    vim.api.nvim_create_user_command("LipsumParagraph", function(opts)
-      local count = tonumber(opts.args or "1")
-      util.insert_text(M.paragraphs(count))
+  if M.options.user_commands.paragraphs ~= nil then
+    vim.api.nvim_create_user_command(M.options.user_commands.paragraphs, function(opts)
+      util.insert_text(M.lines(tonumber(opts.args or "1")))
     end, {
       nargs = "?",
       desc = "[lipsum-nvim] Generate paragraph(s)",
