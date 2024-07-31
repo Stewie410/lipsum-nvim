@@ -30,7 +30,7 @@ deps.add({
 ## 📝 Setup
 
 ```lua
-require("lipsum").setup({
+require("lipsum-nvim").setup({
   ---@type string[] List of words used for generation, will be merged with lipsum.Options.word_list
   words = {},
   ---@type 'cicero'|'english'|'lipsum'|'standard'|nil Preset word list
@@ -88,7 +88,7 @@ this produces around 300 unique words, which should be sufficient, hopefully.
 To add your own custom words:
 
 ```bash
-require("lipsum").setup({
+require("lipsum-nvim").setup({
     words = {
         -- words
     },

@@ -4,7 +4,7 @@ local M = {}
 ---@param name string
 ---@return table
 function M.get_words(name)
-  local ok, words = pcall(require, "lipsum.words." .. string.lower(name))
+  local ok, words = pcall(require, "lipsum-nvim.words." .. string.lower(name))
 
   if not ok then
     error("Cannot load lipsum wordlist: " .. name)

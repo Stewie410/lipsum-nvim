@@ -1,13 +1,13 @@
-local gen = require("lipsum.generate")
-local util = require("lipsum.util")
+local gen = require("lipsum-nvim.generate")
+local util = require("lipsum-nvim.util")
 
 local M = {}
 
 M.namespace = vim.api.nvim_create_namespace("Lipsum")
 
----@class lipsum.Options
+---@class lipsum-nvim.Options
 local defaults = {
-  ---@type string[] List of words used for generation, will be merged with lipsum.Options.word_list
+  ---@type string[] List of words used for generation, will be merged with lipsum-nvim.Options.word_list
   words = {},
   ---@type 'cicero'|'english'|'lipsum'|'standard'|nil Preset word list
   word_list = "standard",
@@ -30,11 +30,11 @@ local defaults = {
   },
 }
 
----@type lipsum.Options
+---@type lipsum-nvim.Options
 M.options = {}
 
 ---Plugin init
----@param options? lipsum.Options
+---@param options? lipsum-nvim.Options
 function M.setup(options)
   if vim.fn.has("nvim-0.10") == 0 then
     util.err("Requires neovim 0.10+, probably.")
@@ -42,7 +42,7 @@ function M.setup(options)
   M.options = vim.tbl_deep_extend("force", {}, defaults, options or {})
 
   if M.options.word_list ~= nil then
-    local ok, wl = pcall(require, "lipsum.words." .. string.lower(M.options.word_list))
+    local ok, wl = pcall(require, "lipsum-nvim.words." .. string.lower(M.options.word_list))
     if not ok or wl == nil then
       util.err("Failed to import wordlist: " .. M.options.word_list)
     end

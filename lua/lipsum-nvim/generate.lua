@@ -1,6 +1,6 @@
 local M = {}
 
-local title = require("lipsum.util").title_case
+local title = require("lipsum-nvim.util").title_case
 
 -- set random seed on current time
 math.randomseed(vim.fn.reltimefloat(vim.fn.reltime()))
