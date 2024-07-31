@@ -107,7 +107,7 @@ require("lipsum-nvim").setup({
 })
 ```
 
-## Insipiration
+## Links
 
 - [`derktata/lorem.nvim`](https://github.com/derektata/lorem.nvim)
 - [`mbpowers/lorem-nvim`](https://github.com/mbpowers/lorem-nvim)
