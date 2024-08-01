@@ -69,7 +69,7 @@ function M.setup(options)
 
   if M.options.user_commands.paragraphs ~= nil then
     vim.api.nvim_create_user_command(M.options.user_commands.paragraphs, function(opts)
-      util.insert_text(M.lines(tonumber(opts.args or "1")))
+      util.insert_text(M.paragraphs(tonumber(opts.args or "1")))
     end, {
       nargs = "?",
       desc = "[lipsum-nvim] Generate paragraph(s)",
