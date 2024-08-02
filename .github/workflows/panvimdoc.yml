@@ -24,7 +24,7 @@ jobs:
           version: "NVIM v0.10.0"
           description: 'A "simple" Lorem Ipsum generation plugin.'
           toc: true
-          dedupsubheadings: true
+          dedupsubheadings: false
           treesitter: true
           demojify: true
           docmappingprojectname: false
