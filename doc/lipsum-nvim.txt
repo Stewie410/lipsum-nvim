@@ -1,4 +1,4 @@
-*lipsum-nvim.txt*                    A "simple" Lorem Ipsum generation plugin.
+*lipsum-nvim.txt*         For NVIM v0.10.0         Last change: 2024 August 02
 
 ==============================================================================
 Table of Contents                              *lipsum-nvim-table-of-contents*
