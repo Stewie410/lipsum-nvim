@@ -22,7 +22,6 @@ jobs:
           vimdoc: lipsum-nvim
           pandoc: "README.md"
           version: "NVIM v0.10.0"
-          description: 'A "simple" Lorem Ipsum generation plugin.'
           toc: true
           dedupsubheadings: true
           treesitter: true
