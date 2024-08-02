@@ -22,10 +22,12 @@ jobs:
           vimdoc: lipsum-nvim
           pandoc: "README.md"
           version: "NVIM v0.10.0"
+          description: 'A "simple" Lorem Ipsum generation plugin.'
           toc: true
           dedupsubheadings: true
           treesitter: true
           demojify: true
+          docmappingprojectname: false
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto generate docs"
