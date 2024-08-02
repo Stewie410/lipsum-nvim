@@ -1,14 +1,14 @@
-*lipsum-nvim.txt*         For NVIM v0.10.0         Last change: 2024 August 01
+*lipsum-nvim.txt*         For NVIM v0.10.0         Last change: 2024 August 02
 
 ==============================================================================
 Table of Contents                              *lipsum-nvim-table-of-contents*
 
 1. lipsum-nvim                                       |lipsum-nvim-lipsum-nvim|
-  - ✨ Features                        |lipsum-nvim-lipsum-nvim-✨-features|
-  - ⚠️ Requirements          |lipsum-nvim-lipsum-nvim-⚠️-requirements|
-  - 📦 Installation              |lipsum-nvim-lipsum-nvim-📦-installation|
-  - 📝 Configuration            |lipsum-nvim-lipsum-nvim-📝-configuration|
-  - ⌨️ Commands                  |lipsum-nvim-lipsum-nvim-⌨️-commands|
+  - Features                                |lipsum-nvim-lipsum-nvim-features|
+  - Requirements                        |lipsum-nvim-lipsum-nvim-requirements|
+  - Installation                        |lipsum-nvim-lipsum-nvim-installation|
+  - Configuration                      |lipsum-nvim-lipsum-nvim-configuration|
+  - Commands                                |lipsum-nvim-lipsum-nvim-commands|
   - Word Generation                  |lipsum-nvim-lipsum-nvim-word-generation|
   - Links                                      |lipsum-nvim-lipsum-nvim-links|
 
@@ -18,7 +18,7 @@ Table of Contents                              *lipsum-nvim-table-of-contents*
 A "simple" `Lorem Ipsum` generation plugin.
 
 
-✨ FEATURES                            *lipsum-nvim-lipsum-nvim-✨-features*
+FEATURES                                    *lipsum-nvim-lipsum-nvim-features*
 
 - User-defined wordlists for generation
 - Generate 1+ words, lines/sentences or paragraphs
@@ -26,16 +26,16 @@ A "simple" `Lorem Ipsum` generation plugin.
 - Not much else
 
 
-⚠️ REQUIREMENTS              *lipsum-nvim-lipsum-nvim-⚠️-requirements*
+REQUIREMENTS                            *lipsum-nvim-lipsum-nvim-requirements*
 
 - Neovim version 0.10.0 or higher
     - Only tested on v0.10, _may_ work on older versions
 
 
-📦 INSTALLATION                  *lipsum-nvim-lipsum-nvim-📦-installation*
+INSTALLATION                            *lipsum-nvim-lipsum-nvim-installation*
 
 
-💤 LAZY.NVIM ~
+LAZY.NVIM ~
 
 >lua
     {
@@ -50,7 +50,7 @@ A "simple" `Lorem Ipsum` generation plugin.
 <
 
 
-🚐 MINI.DEPS ~
+MINI.DEPS ~
 
 >lua
     local deps = require("mini.deps")
@@ -60,7 +60,7 @@ A "simple" `Lorem Ipsum` generation plugin.
 <
 
 
-📝 CONFIGURATION                *lipsum-nvim-lipsum-nvim-📝-configuration*
+CONFIGURATION                          *lipsum-nvim-lipsum-nvim-configuration*
 
 >lua
     require("lipsum-nvim").setup({
@@ -89,13 +89,13 @@ A "simple" `Lorem Ipsum` generation plugin.
 <
 
 
-⌨️ COMMANDS                      *lipsum-nvim-lipsum-nvim-⌨️-commands*
+COMMANDS                                    *lipsum-nvim-lipsum-nvim-commands*
 
 Command names can be customized in the setup options; but by default:
 
-- `LipsumWord [num]`: Generate random word(s) from word list
-- `LipsumLine [num]`: Generate random line(s)/sentence(s) from word list
-- `LipsumParagraph [num]`: Generate random paragraph(s) from word list
+- `LipsumWord [num]`Generate random word(s) from word list
+- `LipsumLine [num]`Generate random line(s)/sentence(s) from word list
+- `LipsumParagraph [num]`Generate random paragraph(s) from word list
 
 Each command will _always_ generate at least 1 item.
 
@@ -108,7 +108,7 @@ following options:
 - 100,000 words
 - Start with "Lorem ipsum dolor sit amet" enabled
 
-Once produced, filtered the results with some `shellscript`:
+Once produced, filtered the results with some `shellscript`
 
 >bash
     tr -d '\n[:punct:]' < lorem.txt | \
@@ -117,7 +117,7 @@ Once produced, filtered the results with some `shellscript`:
         sort
 <
 
-While this may not produce every possible word from the generator, on average
+Whilethis may not produce every possible word from the generator, on average
 this produces around 300 unique words, which should be sufficient, hopefully.
 
 To add your own custom words:
