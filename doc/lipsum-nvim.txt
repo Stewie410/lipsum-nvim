@@ -4,13 +4,13 @@
 Table of Contents                              *lipsum-nvim-table-of-contents*
 
 1. lipsum-nvim                                       |lipsum-nvim-lipsum-nvim|
-  - Features                                            |lipsum-nvim-features|
-  - Requirements                                    |lipsum-nvim-requirements|
-  - Installation                                    |lipsum-nvim-installation|
-  - Configuration                                  |lipsum-nvim-configuration|
-  - Commands                                            |lipsum-nvim-commands|
-  - Word Generation                              |lipsum-nvim-word-generation|
-  - Links                                                  |lipsum-nvim-links|
+  - Features                                |lipsum-nvim-lipsum-nvim-features|
+  - Requirements                        |lipsum-nvim-lipsum-nvim-requirements|
+  - Installation                        |lipsum-nvim-lipsum-nvim-installation|
+  - Configuration                      |lipsum-nvim-lipsum-nvim-configuration|
+  - Commands                                |lipsum-nvim-lipsum-nvim-commands|
+  - Word Generation                  |lipsum-nvim-lipsum-nvim-word-generation|
+  - Links                                      |lipsum-nvim-lipsum-nvim-links|
 
 ==============================================================================
 1. lipsum-nvim                                       *lipsum-nvim-lipsum-nvim*
@@ -18,7 +18,7 @@ Table of Contents                              *lipsum-nvim-table-of-contents*
 A "simple" `Lorem Ipsum` generation plugin.
 
 
-FEATURES                                                *lipsum-nvim-features*
+FEATURES                                    *lipsum-nvim-lipsum-nvim-features*
 
 - User-defined wordlists for generation
 - Generate 1+ words, lines/sentences or paragraphs
@@ -26,13 +26,13 @@ FEATURES                                                *lipsum-nvim-features*
 - Not much else
 
 
-REQUIREMENTS                                        *lipsum-nvim-requirements*
+REQUIREMENTS                            *lipsum-nvim-lipsum-nvim-requirements*
 
 - Neovim version 0.10.0 or higher
     - Only tested on v0.10, _may_ work on older versions
 
 
-INSTALLATION                                        *lipsum-nvim-installation*
+INSTALLATION                            *lipsum-nvim-lipsum-nvim-installation*
 
 
 LAZY.NVIM ~
@@ -60,7 +60,7 @@ MINI.DEPS ~
 <
 
 
-CONFIGURATION                                      *lipsum-nvim-configuration*
+CONFIGURATION                          *lipsum-nvim-lipsum-nvim-configuration*
 
 >lua
     require("lipsum-nvim").setup({
@@ -89,7 +89,7 @@ CONFIGURATION                                      *lipsum-nvim-configuration*
 <
 
 
-COMMANDS                                                *lipsum-nvim-commands*
+COMMANDS                                    *lipsum-nvim-lipsum-nvim-commands*
 
 Command names can be customized in the setup options; but by default:
 
@@ -100,7 +100,7 @@ Command names can be customized in the setup options; but by default:
 Each command will _always_ generate at least 1 item.
 
 
-WORD GENERATION                                  *lipsum-nvim-word-generation*
+WORD GENERATION                      *lipsum-nvim-lipsum-nvim-word-generation*
 
 Words generated with lipsum.com <https://www.lipsum.com>, based on the
 following options:
@@ -131,7 +131,7 @@ To add your own custom words:
 <
 
 
-LINKS                                                      *lipsum-nvim-links*
+LINKS                                          *lipsum-nvim-lipsum-nvim-links*
 
 - `derktata/lorem.nvim` <https://github.com/derektata/lorem.nvim>
 - `mbpowers/lorem-nvim` <https://github.com/mbpowers/lorem-nvim>
